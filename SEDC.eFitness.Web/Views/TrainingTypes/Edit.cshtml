@@ -1,0 +1,83 @@
+﻿@*@model SEDC.eFitness.Models.TrainingType*@
+
+@model SEDC.eFitness.Web.ViewModels.CreateTrainingTypeViewModel
+
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-light">Edit</h2>
+
+@using (Html.BeginForm("Edit", "TrainingTypes", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4 class="text-light">TrainingType</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.TrainingType.Id)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TrainingType.Name, htmlAttributes: new { @class = "control-label col-md-2 text-light" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TrainingType.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TrainingType.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TrainingType.Description, htmlAttributes: new { @class = "control-label col-md-2 text-light" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TrainingType.Description, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TrainingType.Description, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TrainingType.TrainingTypeImagePath, htmlAttributes: new { @class = "control-label col-md-2 text-light" })
+            <div class="col-md-10">
+                @{
+                    if (Model.TrainingType.TrainingTypeImagePath != null)
+                    {
+                        var base64 = Convert.ToBase64String(Model.TrainingType.TrainingTypeImagePath);
+                        var imgsrc = string.Format("data:image/gif;base64,{0}", base64);
+
+                        <img src='@imgsrc' alt="slika" height="90px" width="auto" />
+                    }
+                }
+                    <br />
+                    <br />
+                    <br />
+                     <input class="text-light" type="file" id="imageTrainingType" name="imageTrainingType" />
+                </div>
+            </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Trainers, htmlAttributes: new { @class = "control-label col-md-2 text-light" })
+            <div class="col-md-10">
+                <select class="form-control" id="Trainers" name="TrainingType.TrainerId">
+                    <option value="0">Please choose training type</option>
+                    @foreach (var trainer in Model.Trainers)
+                    {
+                        <option value="@trainer.Id">@trainer.FullName</option>
+                    }
+                </select>
+                @Html.ValidationMessageFor(model => model.TrainingType, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "text-light"})
+</div>

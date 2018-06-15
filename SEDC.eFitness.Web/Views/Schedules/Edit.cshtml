@@ -1,0 +1,69 @@
+﻿@*@model SEDC.eFitness.Models.Schedule*@
+
+@model SEDC.eFitness.Web.ViewModels.CreateScheduleViewModel
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-light">Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4 class="text-light">Schedule</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Schedule.Id)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Schedule.TrainingDay, htmlAttributes: new { @class = "control-label col-md-2 text-light" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(model => model.Schedule.TrainingDay, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Schedule.TrainingDay, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Schedule.StartTime, htmlAttributes: new { @class = "control-label col-md-2 text-light" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Schedule.StartTime, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Schedule.StartTime, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Schedule.EndTime, htmlAttributes: new { @class = "control-label col-md-2 text-light" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Schedule.EndTime, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Schedule.EndTime, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TrainingTypes, htmlAttributes: new { @class = "control-label col-md-2 text-light" })
+            <div class="col-md-10">
+                <select class="form-control" id="TrainingTypes" name="Schedule.TrainingTypeId">
+                    <option value="0">Please choose training type</option>
+                    @foreach (var trainingType in Model.TrainingTypes)
+                    {
+                        <option value="@trainingType.Id">@trainingType.Name</option>
+                    }
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "text-light"})
+</div>

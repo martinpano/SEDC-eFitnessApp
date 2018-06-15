@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEDC.eFitness.Web", "SEDC.eFitness.Web\SEDC.eFitness.Web.csproj", "{81A06578-4955-409F-BFF9-DB0F2B7E4FB7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEDC.eFitness.Models", "SEDC.eFitness.Models\SEDC.eFitness.Models.csproj", "{2E3712B4-6363-4F8C-A42E-CCD6B2BAF062}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEDC.eFitness.Repo", "SEDC.eFitness.Repo\SEDC.eFitness.Repo.csproj", "{7B493AD8-146D-4952-B35A-CE1C781BD077}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEDC.eFitness.Services", "SEDC.eFitness.Services\SEDC.eFitness.Services.csproj", "{4CE1F765-A38A-47FA-9778-4E73D854484E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{81A06578-4955-409F-BFF9-DB0F2B7E4FB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81A06578-4955-409F-BFF9-DB0F2B7E4FB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81A06578-4955-409F-BFF9-DB0F2B7E4FB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81A06578-4955-409F-BFF9-DB0F2B7E4FB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E3712B4-6363-4F8C-A42E-CCD6B2BAF062}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E3712B4-6363-4F8C-A42E-CCD6B2BAF062}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E3712B4-6363-4F8C-A42E-CCD6B2BAF062}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E3712B4-6363-4F8C-A42E-CCD6B2BAF062}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B493AD8-146D-4952-B35A-CE1C781BD077}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B493AD8-146D-4952-B35A-CE1C781BD077}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B493AD8-146D-4952-B35A-CE1C781BD077}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B493AD8-146D-4952-B35A-CE1C781BD077}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CE1F765-A38A-47FA-9778-4E73D854484E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CE1F765-A38A-47FA-9778-4E73D854484E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CE1F765-A38A-47FA-9778-4E73D854484E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CE1F765-A38A-47FA-9778-4E73D854484E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,33 @@
+﻿
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark text-light mr-auto">
+    <div class="container">
+        @Html.ActionLink("E-Fitness Application", "Home", "Trainers", null, new { @class = "navbar-brand" })
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0 float-left">
+                <li class="nav-item">
+                    @Html.ActionLink("Trainers", "Index", "Trainers", null, new { @class = "nav-link" })
+                </li>
+                <li class="nav-item">
+                    @Html.ActionLink("Training Types", "Index", "TrainingTypes", null, new { @class = "nav-link" })
+                </li>
+                <li class="nav-item">
+                    @Html.ActionLink("Schedule", "Index", "Schedules", null, new { @class = "nav-link" })
+                </li>
+            </ul>
+            <ul class="navbar-nav float-lg-right">
+                @if (User.Identity.IsAuthenticated && User.Identity.Name == "manager@efitness.com")
+                {
+                    <li class="nav-item text-white">Welcome @User.Identity.Name [@Html.ActionLink("Sign out", "LogOut", "Users", null, new { @class = "text-light"})]</li>
+                }
+                else
+                {
+                    <li class="nav-item"> @Html.ActionLink("Sign in", "LogIn", "Users", null, new {@class = "text-light" })</li>
+                }
+            </ul>
+        </div>
+    </div>
+    </nav>

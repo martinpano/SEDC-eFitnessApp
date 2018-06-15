@@ -1,0 +1,67 @@
+﻿@model SEDC.eFitness.Models.Trainer
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-light">Details</h2>
+
+<div>
+    <h4 class="text-light">Trainer</h4>
+    <hr />
+    <dl class="dl-horizontal text-light">
+        <dt>
+            @Html.DisplayNameFor(model => model.FullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShotrBiography)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShotrBiography)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImagePath)
+        </dt>
+
+        <dd>
+            @{
+                if (Model.ImagePath != null)
+                {
+                    var base64 = Convert.ToBase64String(Model.ImagePath);
+                    var imgsrc = string.Format("data:image/gif;base64,{0}", base64);
+
+                    <img src='@imgsrc' alt="slika" height="90px" width="auto" />
+                }
+            }
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id}, new { @class = "text-light" }) |
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "text-light" })
+</p>

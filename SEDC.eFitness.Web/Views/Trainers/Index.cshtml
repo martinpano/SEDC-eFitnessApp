@@ -1,0 +1,82 @@
+﻿@model IEnumerable<SEDC.eFitness.Models.Trainer>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2 class="text-center text-light">List of trainers</h2>
+
+<h4 class="text-left">
+    @if (User.Identity.IsAuthenticated && User.Identity.Name == "manager@efitness.com")
+    {
+        @Html.ActionLink("Create New", "Create", "Trainers", null, new { @class="text-light"})
+    }
+</h4>
+@if(Model != null && Model.Count() > 0)
+{
+<table class="table table-hover table-striped table-secondary">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ImagePath)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShotrBiography)
+        </th>
+          @if (User.Identity.IsAuthenticated && User.Identity.Name == "manager@efitness.com")
+          {
+         <th>Actions</th>
+          }
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @if (item.ImagePath != null)
+                {
+                    var base64 = Convert.ToBase64String(item.ImagePath);
+                    var imageSrc = string.Format("data:image/gif;base64,{0}", base64);
+
+                    <img src='@imageSrc' alt="Trainer-avatar" height="90px" width="auto" />
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShotrBiography)
+            </td>
+                
+            @if (User.Identity.IsAuthenticated && User.Identity.Name == "manager@efitness.com")
+            {
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+            }
+        </tr>
+    }
+</table>
+    }
+else
+{
+    <p>No records of trainers yet.</p>
+}

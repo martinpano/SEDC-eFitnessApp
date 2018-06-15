@@ -1,0 +1,26 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/styles/style.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+   
+    <title>e-Fitness</title>
+    <meta name="description" content="The description of my page" />
+</head>
+<body style="background-color: black; background-image: url(../../img/background.jpg); background-size: cover; ">
+    <header>
+        @Html.Partial("_Header")
+    </header>
+    <div class="container" id="main"> 
+         @RenderBody()
+    </div>
+    <footer class="container-fluid bg-dark fixed-bottom text-center text-light">
+        e-Fitness Web Application, 2018 All rights reserved
+    </footer>
+</body>
+</html>

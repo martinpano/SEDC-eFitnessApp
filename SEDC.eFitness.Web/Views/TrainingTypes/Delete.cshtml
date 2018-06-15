@@ -1,0 +1,55 @@
+﻿@model SEDC.eFitness.Models.TrainingType
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-light">Delete</h2>
+
+<h3 class="text-light">Are you sure you want to delete this?</h3>
+<div>
+    <h4 class="text-light">TrainingType</h4>
+    <hr />
+    <dl class="dl-horizontal text-light">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrainingTypeImagePath)
+        </dt>
+
+        <dd>
+            @if (Model.TrainingTypeImagePath != null)
+            {
+                var base64 = Convert.ToBase64String(Model.TrainingTypeImagePath);
+                var imageSrc = string.Format("data:image/gif;base64,{0}", base64);
+
+                <img src='@imageSrc' alt="Trainer-avatar" height="90px" width="auto" />
+            }
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "text-light"})
+        </div>
+    }
+</div>

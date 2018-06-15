@@ -1,0 +1,63 @@
+﻿@*@model SEDC.eFitness.Models.TrainingType*@
+
+@model SEDC.eFitness.Web.ViewModels.DetailsTrainingTypesViewModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-light">Details</h2>
+
+<div>
+    <h4 class="text-light">TrainingType</h4>
+    <hr />
+    <dl class="dl-horizontal text-light">
+        <dt>
+            @Html.DisplayNameFor(model => model.TrainingType.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrainingType.Name)
+        </dd>
+        <dt>
+            @Html.Raw("Trainers")
+        </dt>
+
+        <dd>
+            @foreach (var trainer in Model.Trainers)
+            {
+                if (trainer.Id == Model.TrainingType.TrainerId)
+                {
+                    @Html.Raw(trainer.FullName)
+                }
+            }
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TrainingType.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrainingType.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrainingType.TrainingTypeImagePath)
+        </dt>
+
+        <dd>
+            @if (Model.TrainingType.TrainingTypeImagePath != null)
+            {
+                var base64 = Convert.ToBase64String(Model.TrainingType.TrainingTypeImagePath);
+                var imageSrc = string.Format("data:image/gif;base64,{0}", base64);
+
+                <img src='@imageSrc' alt="Trainer-avatar" height="90px" width="auto" />
+            }
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TrainingType.Id }, new { @class = "text-light"}) |
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "text-light"})
+</p>

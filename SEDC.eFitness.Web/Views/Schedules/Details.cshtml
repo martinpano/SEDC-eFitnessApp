@@ -1,0 +1,43 @@
+﻿@model SEDC.eFitness.Models.Schedule
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-light">Details</h2>
+
+<div>
+    <h4 class="text-light">Schedule</h4>
+    <hr />
+    <dl class="dl-horizontal text-light">
+        <dt>
+            @Html.DisplayNameFor(model => model.TrainingDay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrainingDay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EndTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EndTime)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "text-light"}) |
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "text-light"})
+</p>

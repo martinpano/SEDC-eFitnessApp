@@ -1,0 +1,11 @@
+E:\Martin\SEDC\BACKEND\SEDC.Homework - Refactored\SEDC.Homework-eFitnessApp\SEDC.eFitness.Services\bin\Debug\SEDC.eFitness.Services.dll
+E:\Martin\SEDC\BACKEND\SEDC.Homework - Refactored\SEDC.Homework-eFitnessApp\SEDC.eFitness.Services\bin\Debug\SEDC.eFitness.Services.pdb
+E:\Martin\SEDC\BACKEND\SEDC.Homework - Refactored\SEDC.Homework-eFitnessApp\SEDC.eFitness.Services\bin\Debug\SEDC.eFitness.Models.dll
+E:\Martin\SEDC\BACKEND\SEDC.Homework - Refactored\SEDC.Homework-eFitnessApp\SEDC.eFitness.Services\bin\Debug\SEDC.eFitness.Repo.dll
+E:\Martin\SEDC\BACKEND\SEDC.Homework - Refactored\SEDC.Homework-eFitnessApp\SEDC.eFitness.Services\bin\Debug\EntityFramework.dll
+E:\Martin\SEDC\BACKEND\SEDC.Homework - Refactored\SEDC.Homework-eFitnessApp\SEDC.eFitness.Services\bin\Debug\SEDC.eFitness.Models.pdb
+E:\Martin\SEDC\BACKEND\SEDC.Homework - Refactored\SEDC.Homework-eFitnessApp\SEDC.eFitness.Services\bin\Debug\SEDC.eFitness.Repo.pdb
+E:\Martin\SEDC\BACKEND\SEDC.Homework - Refactored\SEDC.Homework-eFitnessApp\SEDC.eFitness.Services\bin\Debug\EntityFramework.xml
+E:\Martin\SEDC\BACKEND\SEDC.Homework - Refactored\SEDC.Homework-eFitnessApp\SEDC.eFitness.Services\obj\Debug\SEDC.eFitness.Services.csprojResolveAssemblyReference.cache
+E:\Martin\SEDC\BACKEND\SEDC.Homework - Refactored\SEDC.Homework-eFitnessApp\SEDC.eFitness.Services\obj\Debug\SEDC.eFitness.Services.dll
+E:\Martin\SEDC\BACKEND\SEDC.Homework - Refactored\SEDC.Homework-eFitnessApp\SEDC.eFitness.Services\obj\Debug\SEDC.eFitness.Services.pdb
